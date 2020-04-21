@@ -24,19 +24,22 @@ public class LinkedList{
         }
         size++;
      
+     
     }
     
-    // public static void addFront(int data,LinkedList list){
-    //     Node newNode=new Node(data,null);
-    //     if(list.head==null){
-    //         list.head=newNode;
-    //     }
-    //     else{
-    //         list.head=newNode;
-    //         newNode.nextNode=list.head;
-    //     }
-        
-    // }
+    public static void addFront(int data,LinkedList list){
+        Node newNode=new Node(data,null);
+        if(list.head==null){
+            list.head=newNode;
+        }
+        else{
+            Node currentNode=list.head;
+            list.head=newNode;
+            list.head.nextNode=currentNode;
+        }
+        size++;
+      
+    }
     public static void printLinkedList(LinkedList list){
         
         Node curNode=list.head;
