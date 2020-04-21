@@ -40,6 +40,28 @@ public class LinkedList{
         size++;
       
     }
+    
+    public static LinkedList reverseLinkedList(LinkedList list){
+        
+        if(list.head==null || list.size==1)
+        return list;
+        
+        else{
+            Node current=list.head;
+            Node previous=null;
+            Node forward=null;
+            
+            while(current.nextNode!=null){
+                forward=current.nextNode;
+                current.nextNode=previous;
+                previous=current;
+                current=forward;
+            }
+            list.head=current;
+            list.head.nextNode=previous;
+            return list;
+        }
+    }
     public static void printLinkedList(LinkedList list){
         
         Node curNode=list.head;
